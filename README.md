@@ -1,18 +1,18 @@
 # AI-Powered Inspiration Board
 
-An open-source web app that delivers daily, AI-generated inspiration—quotes, images, and creative prompts. Save your favorites to personalized boards and remix ideas for fresh creativity every day!
+An open-source web app that delivers daily, AI-generated inspiration—quotes, images, and creative prompts. Save your favorites, remix unique ideas, and enjoy a beautiful interactive experience!
 
 ---
 
 ## Features
-- **Daily AI-generated quotes, images, and prompts**
-- **Save favorites to boards** (coming to frontend via local storage)
-- **Remix inspirations for unique results** ("Remix" reload coming soon)
-- **Simple social sharing** (planned)
-- **Fast, modern web app:**
-  - Frontend: React (Vite, TypeScript)
+- **Live inspiration board**: AI-generated quotes, images, and prompts every visit
+- **Remix** button fetches fresh inspiration instantly
+- **Save to Favorites**: Persist inspiring content (localStorage)
+- **Favorites** section: View and manage what you’ve saved
+- **Modern web app:**
+  - Frontend: React (Vite, TypeScript), modular components (`InspirationCard`, `Favorites`)
   - Backend: Node.js (Express, modular routing, dotenv, proper error handling)
-- **Easy, local and cloud deployment**
+- **Cloud-ready & easy local setup**
 
 ## Project Structure
 
@@ -20,6 +20,13 @@ An open-source web app that delivers daily, AI-generated inspiration—quotes, i
 /
 ├── frontend/      # React app (Vite, TypeScript)
 │   └── src/
+│       ├── App.tsx               # Main app, handles API and UI
+│       ├── api/
+│       │   └── inspiration.ts    # API helper
+│       └── components/
+│           ├── InspirationCard.tsx
+│           ├── Favorites.tsx
+│           └── index.ts
 ├── backend/       # Node.js Express API
 │   ├── src/
 │   │   ├── server.js      # Express server w/ dotenv, error handler, modular routes
@@ -59,14 +66,14 @@ npm run dev
 ```
 - The backend API will run on http://localhost:3001
 
-> You may need to configure the backend API URL for the frontend (e.g., proxy, environment variable, or directly in API calls).
+> If needed, set the backend API URL in the frontend (proxy or .env or direct API calls).
 
 ## API Endpoints
-- `GET /api/inspiration` — Get a daily AI or mock quote, author, and image (now powered by modular Express route & error handler)
+- `GET /api/inspiration` — Returns a daily AI or sample quote, author, and image.
 
 ## To Do / Contribute
 - [x] Modularize backend with routes, dotenv, error handling
-- [ ] Frontend: inspiration card fetches API, save/remix/favorites
+- [x] Frontend: inspiration card fetches API, save/remix/favorites
 - [ ] UI/UX improvements (polish, Material UI or equivalent)
 - [ ] Add login/auth for personalized boards
 - [ ] Replace API stubs with real AI or external APIs
@@ -77,7 +84,7 @@ npm run dev
 - [x] Backend scaffold & architecture upgrade
 - [x] .gitignore/.env.example
 - [x] Improved backend modular routing, error handling
-- [ ] Interactive frontend features (Remix, Favorites)
+- [x] Interactive frontend features (Remix, Favorites)
 - [ ] Fancier UI/UX
 - [ ] AI or external content integration
 - [ ] Open-source docs, contribution guides
@@ -85,8 +92,8 @@ npm run dev
 ---
 
 **Current Status:**
-- Backend is modularized, robust, and production-friendly.
-- Frontend is scaffolded and ready for dynamic inspiration fetching (upgrade in progress!).
-- Each major step is designed for maintainability and extensibility.
+- 🌟 Fully interactive: users can fetch, remix, and save inspiration; all features are live!
+- Modular, robust, and ready for cloud deployment or community contributions.
+- Next up: UI/UX polish, real AI integration, open-source docs, and more.
 
 Licensed under MIT. Let’s inspire together!
